@@ -14,19 +14,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-//Precise que ce bean est géré par JSF
-@ManagedBean
-// Precise au serveur que ce bean a pour portée la requete
-@RequestScoped
-// EJB Entity
 @Entity
+@Table(name = "commande")
+@NamedQueries({
+	@NamedQuery(name = "Commande.All", query = "SELECT c FROM Commande c"),
+	@NamedQuery(name = "Commande.ById", query = "SELECT c FROM Commande c WHERE c.id =:commande")
+})
 public class Commande {
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )*/
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private Long id;
 	
 	@Column(name = "date")
