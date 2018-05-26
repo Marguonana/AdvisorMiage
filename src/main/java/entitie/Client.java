@@ -1,7 +1,5 @@
 package entitie;
 
-import java.util.Date;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
@@ -13,6 +11,8 @@ import javax.persistence.*;
 // EJB Entity
 @Entity
 public class Client extends Individu {
+
+	@Column(name = "etat")
 	private String etat;
 
 	public Client() {

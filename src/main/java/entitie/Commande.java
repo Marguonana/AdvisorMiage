@@ -1,10 +1,21 @@
 package entitie;
 
-import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 //Precise que ce bean est géré par JSF
 @ManagedBean
@@ -13,17 +24,28 @@ import javax.persistence.*;
 // EJB Entity
 @Entity
 public class Commande {
+	
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )*/
 	private Long id;
-
+	
+	@Column(name = "date")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
-	
-	private ArrayList<Article> articles;
-	private ArrayList<Anomalie> anomalies;
-	
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "individu_id")
 	private Individu individu;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "reglement_id")
 	private Reglement reglement;
+
+	@OneToMany(mappedBy="commande", fetch = FetchType.LAZY)
+	private ArrayList<Article> articles;
+	
+	@OneToMany(mappedBy="commande", fetch = FetchType.LAZY)
+	private ArrayList<Anomalie> anomalies;
 
 	Commande() {
 

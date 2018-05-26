@@ -14,15 +14,37 @@ import javax.persistence.*;
 // EJB Entity
 @Entity
 public class Individu extends Utilisateur {
+	
+	@Column(name = "date_naissance")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateNaissance;
+
+	@Column(name = "categorie_socio")
 	private String categorieSocio;
+
+	@Column(name = "telephone")
 	private String telephone;
+
+	@Column(name = "caracteristique_commerciale")
 	private Enum caracteristiqueCommerciale;
+
+	@Column(name = "adresse")
 	private String adresse;
+
+	@Column(name = "code_postal")
 	private int codePostal;
+
+	@Column(name = "ville")
 	private String ville;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "admin_id")
 	private Administrateur admin;
+
+	@OneToMany(mappedBy="individu", fetch = FetchType.LAZY)
 	private ArrayList<Commande> commandes;
+	
+	@OneToMany(mappedBy="individu", fetch = FetchType.LAZY)
 	private ArrayList<Critere> criteres;
 
 	public Individu() {

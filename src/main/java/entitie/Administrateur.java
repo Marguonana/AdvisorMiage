@@ -13,7 +13,11 @@ import javax.persistence.*;
 // EJB Entity
 @Entity
 public class Administrateur extends Utilisateur {
+	
+	@OneToMany(mappedBy="admin", fetch = FetchType.LAZY)
 	private ArrayList<Individu> individus;
+
+	@OneToMany(mappedBy="admin", fetch = FetchType.LAZY)
 	private ArrayList<Article> articles;
 
 	public Administrateur() {

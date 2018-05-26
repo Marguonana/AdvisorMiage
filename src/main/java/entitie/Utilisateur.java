@@ -12,19 +12,23 @@ import javax.persistence.*;
 @RequestScoped
 // EJB Entity
 @Entity
+@Table(name = "utilisateur")
+@NamedQueries({
+		@NamedQuery(name = "Utilisateur.ById", query = "SELECT u FROM Utilisateur u WHERE u.id =:utilisateur")
+})
 public class Utilisateur {
+	
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )*/
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Size(min = 3)
+	@Column(name = "nom")
 	private String nom;
 
-	@NotNull
-	@Size(min = 3)
+	@Column(name = "prenom")
 	private String prenom;
 
-	@Pattern(regexp = "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)")
+	@Column(name = "email")
 	private String email;
 
 	Utilisateur() {
