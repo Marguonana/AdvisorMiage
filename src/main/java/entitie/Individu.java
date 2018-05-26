@@ -44,7 +44,7 @@ public class Individu extends Utilisateur {
 	@OneToMany(mappedBy="individu", fetch = FetchType.LAZY)
 	private ArrayList<Commande> commandes;
 	
-	@OneToMany(mappedBy="individu", fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY)
 	private ArrayList<Critere> criteres;
 
 	public Individu() {
