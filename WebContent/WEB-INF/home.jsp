@@ -10,7 +10,7 @@
   <title>Home</title>
   <meta name="description" content="Page d'accueil"> </head>
 
-<body class="" style="background-image: url('brico.jpg');">
+<body class="" style="background-image: url('images/brico.jpg');">
   <div class="py-5">
     <div class="container">
       <div class="row">
@@ -38,7 +38,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 offset-md-10">
-          <a class="btn btn-link text-white bg-gradient border border-danger" href="#" data-toggle="modal" data-target="suivi" style="background-image: url('fond-transparent-rose.png');">Suivre ma commande</a>
+          <a class="btn btn-link text-white bg-gradient border border-danger" href="#" data-toggle="modal" data-target="suivi" style="background-image: url('images/fond-transparent-rose.png');">Suivre ma commande</a>
         </div>
       </div>
     </div>
