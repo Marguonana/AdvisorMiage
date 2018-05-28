@@ -107,14 +107,6 @@ public class Individu extends Utilisateur {
 		this.ville = ville;
 	}
 
-	public Administrateur getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(Administrateur admin) {
-		this.admin = admin;
-	}
-
 	public ArrayList<Commande> getCommandes() {
 		return commandes;
 	}
@@ -129,5 +121,13 @@ public class Individu extends Utilisateur {
 
 	public void setCriteres(ArrayList<Critere> criteres) {
 		this.criteres = criteres;
+	}
+
+	public Administrateur getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Administrateur admin) {
+		this.admin = admin;
 	}
 }

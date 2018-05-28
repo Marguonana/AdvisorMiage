@@ -1,12 +1,20 @@
 package entitie;
 
+import java.sql.Timestamp;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
+//Precise que ce bean est géré par JSF
+@ManagedBean
+// Precise au serveur que ce bean a pour portée la requete
+@RequestScoped
+// EJB Entity
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "utilisateur")
 @NamedQueries({
-		@NamedQuery(name = "Utilisateur.All", query = "SELECT u FROM Utilisateur u"),
 		@NamedQuery(name = "Utilisateur.ById", query = "SELECT u FROM Utilisateur u WHERE u.id =:utilisateur")
 })
 public class Utilisateur {

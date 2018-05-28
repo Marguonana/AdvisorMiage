@@ -29,7 +29,7 @@ public class IndividuService {
 		return individuDAO.getById(id);
 	}
 
-	public Individu individuExiste(String nom, String prenom) {
+	public boolean individuExiste(String nom, String prenom) {
 		return individuDAO.individuExiste(nom, prenom);
 	}
 }
