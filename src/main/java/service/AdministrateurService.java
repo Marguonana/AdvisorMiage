@@ -28,4 +28,8 @@ public class AdministrateurService {
 	public Administrateur getById(Long id) {
 		return administrateurDAO.getById(id);
 	}
+	
+	public Administrateur seConnecter(String email, String mdp) {
+		return administrateurDAO.seConnecter(email, mdp);
+	}
 }

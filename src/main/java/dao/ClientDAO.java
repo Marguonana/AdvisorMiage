@@ -29,4 +29,11 @@ public class ClientDAO extends GenericDAO<Client> {
 		parameters.put("utilisateur", id);
 		return super.singleByNamedQuery("Utilisateur.ById", parameters);
 	}
+
+	public Client clientExiste(String nom, String prenom) {
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("nom", nom);
+		parameters.put("prenom", prenom);
+		return super.singleByNamedQuery("Client.CheckExist", parameters);
+	}
 }

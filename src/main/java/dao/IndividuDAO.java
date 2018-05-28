@@ -29,4 +29,11 @@ public class IndividuDAO extends GenericDAO<Individu> {
 		parameters.put("utilisateur", id);
 		return super.singleByNamedQuery("Utilisateur.ById", parameters);
 	}
+
+	public Individu individuExiste(String nom, String prenom) {
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("nom", nom);
+		parameters.put("prenom", prenom);
+		return super.singleByNamedQuery("Individu.CheckExist", parameters);
+	}
 }

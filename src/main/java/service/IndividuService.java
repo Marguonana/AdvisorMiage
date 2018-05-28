@@ -28,4 +28,8 @@ public class IndividuService {
 	public Individu getById(Long id) {
 		return individuDAO.getById(id);
 	}
+
+	public Individu individuExiste(String nom, String prenom) {
+		return individuDAO.individuExiste(nom, prenom);
+	}
 }

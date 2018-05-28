@@ -3,6 +3,7 @@ package entitie;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "utilisateur")
 @NamedQueries({
 		@NamedQuery(name = "Utilisateur.All", query = "SELECT u FROM Utilisateur u"),

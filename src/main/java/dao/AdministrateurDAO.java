@@ -29,4 +29,11 @@ public class AdministrateurDAO extends GenericDAO<Administrateur> {
 		parameters.put("utilisateur", id);
 		return super.singleByNamedQuery("Utilisateur.ById", parameters);
 	}
+
+	public Administrateur seConnecter(String email, String mdp) {
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("email", email);
+		parameters.put("mdp", mdp);
+		return  super.singleByNamedQuery("Administrateur.ForConnection", parameters);
+	}
 }

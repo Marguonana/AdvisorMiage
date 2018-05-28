@@ -8,7 +8,11 @@ import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "id")
 @Table(name = "individu")
+@NamedQueries({
+	@NamedQuery(name = "Individu.CheckExist", query = "SELECT i FROM Individu i WHERE i.nom =:nom AND i.prenom =:prenom")
+})
 public class Individu extends Utilisateur {
 	
 	@Column(name = "date_naissance")
@@ -101,6 +105,14 @@ public class Individu extends Utilisateur {
 
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+
+	public Administrateur getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Administrateur admin) {
+		this.admin = admin;
 	}
 
 	public ArrayList<Commande> getCommandes() {

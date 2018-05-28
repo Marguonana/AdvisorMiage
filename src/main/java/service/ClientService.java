@@ -28,4 +28,8 @@ public class ClientService {
 	public Client getById(Long id) {
 		return clientDAO.getById(id);
 	}
+
+	public Client clientExiste(String nom, String prenom) {
+		return clientDAO.clientExiste(nom, prenom);
+	}
 }
