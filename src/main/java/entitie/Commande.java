@@ -3,8 +3,6 @@ package entitie;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -92,5 +90,13 @@ public class Commande {
 
 	public void setReglement(Reglement reglement) {
 		this.reglement = reglement;
+	}
+
+	public Individu getIndividu() {
+		return individu;
+	}
+
+	public void setIndividu(Individu individu) {
+		this.individu = individu;
 	}
 }

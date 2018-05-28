@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import entitie.Anomalie;
 import entitie.Client;
 import entitie.Commande;
 import entitie.Individu;
@@ -51,11 +52,11 @@ public class GestionDeCommandeBean implements Serializable { //backing-bean
 			return false;
 		}
 		
-		if(commande.getReglement().getNumero() == null || commande.getReglement().getInformationComplementaire() == null) {
-			Anomalie anomalie = new Anomalie("Problème sur le moyen de paiement");
-			commande.getAnomalies().put(anomalie);
-			return false;
-		} 
+//		if(commande.getReglement().getNumero() == null || commande.getReglement().getInformationComplementaire() == null) {
+//			Anomalie anomalie = new Anomalie("Problème sur le moyen de paiement");
+//			commande.getAnomalies().put(anomalie);
+//			return false;
+//		} 
 		
 		if(!commande.getAnomalies().isEmpty()) {
 			return false;

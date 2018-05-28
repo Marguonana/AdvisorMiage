@@ -3,8 +3,6 @@ package entitie;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
 @Entity

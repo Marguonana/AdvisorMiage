@@ -5,35 +5,36 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import entitie.Client;
-import entitie.Commande;
+import entitie.Article;
 import entitie.Individu;
-import service.ClientService;
+import service.ArticleService;
 import service.IndividuService;
 
 @ManagedBean
 @SessionScoped
-public class GestionPageAdministrateurBean implements Serializable { //backing-bean
-    private static final long serialVersionUID = 1L;
+public class GestionPageAdministrateurBean implements Serializable { // backing-bean
+	private static final long serialVersionUID = 1L;
 
-    //@Autowired
-    private NavigationBean navigationBean;
-    
-    private IndividuService individuService;
-    
-    private ArticleService articleService;
-    
-    private Individu individu;
-    
-    private Article article;
-    
-    public String modifierIndividu() {
-    	individuService.update(individu);
-    }
-    
-    public String modifierArticle() {
-    	articleService.update(article);
-    }
+	// @Autowired
+	private NavigationBean navigationBean;
+
+	private IndividuService individuService;
+
+	private ArticleService articleService;
+
+	private Individu individu;
+
+	private Article article;
+
+	public String modifierIndividu() {
+		individuService.update(individu);
+		return "";
+	}
+
+	public String modifierArticle() {
+		articleService.update(article);
+		return "";
+	}
 
 	public NavigationBean getNavigationBean() {
 		return navigationBean;
