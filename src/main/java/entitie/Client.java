@@ -1,9 +1,15 @@
 package entitie;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
+//Precise que ce bean est géré par JSF
+@ManagedBean
+// Precise au serveur que ce bean a pour portée la requete
+@RequestScoped
+// EJB Entity
 @Entity
-@Table(name = "client")
 public class Client extends Individu {
 
 	@Column(name = "etat")
