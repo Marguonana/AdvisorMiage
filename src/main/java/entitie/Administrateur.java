@@ -7,6 +7,7 @@ import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "id")
 @Table(name = "administrateur")
 @NamedQueries({
 	@NamedQuery(name = "Administrateur.ForConnection", query = "SELECT a FROM Administrateur a WHERE a.email =:email AND a.mdp =:mdp")
