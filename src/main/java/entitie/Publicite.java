@@ -24,6 +24,7 @@ public class Publicite {
 	@ManyToMany(fetch = FetchType.LAZY)
 	private ArrayList<Article> articles;
 	
+	
 	public Publicite() {
 		
 	}

@@ -45,6 +45,7 @@ public class Individu extends Utilisateur {
 	@ManyToMany(fetch = FetchType.LAZY)
 	private ArrayList<Critere> criteres;
 
+	
 	public Individu() {
 
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import dao.IndividuDAO;
 import entitie.Individu;
 
+
 public class IndividuService {
 	
 	IndividuDAO individuDAO = new IndividuDAO();

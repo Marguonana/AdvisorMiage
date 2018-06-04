@@ -6,6 +6,7 @@ import java.util.Map;
 
 import entitie.Individu;
 
+
 public class IndividuDAO extends GenericDAO<Individu> {
 	
 	public Individu create(Individu individu) {

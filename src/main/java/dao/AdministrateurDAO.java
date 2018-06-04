@@ -6,6 +6,7 @@ import java.util.Map;
 
 import entitie.Administrateur;
 
+
 public class AdministrateurDAO extends GenericDAO<Administrateur> {
 	
 	public Administrateur create(Administrateur administrateur) {

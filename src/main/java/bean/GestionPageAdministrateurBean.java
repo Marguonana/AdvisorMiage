@@ -12,7 +12,7 @@ import service.IndividuService;
 
 @ManagedBean
 @SessionScoped
-public class GestionPageAdministrateurBean implements Serializable { // backing-bean
+public class GestionPageAdministrateurBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// @Autowired

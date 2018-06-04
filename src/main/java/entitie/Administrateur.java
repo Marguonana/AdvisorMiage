@@ -21,6 +21,7 @@ public class Administrateur extends Utilisateur {
 	@OneToMany(mappedBy="admin", fetch = FetchType.LAZY)
 	private ArrayList<Article> articles;
 
+	
 	public Administrateur() {
 
 	}

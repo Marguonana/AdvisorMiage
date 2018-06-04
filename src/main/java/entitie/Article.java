@@ -33,6 +33,7 @@ public class Article {
 	@JoinColumn(name = "admin_id")
 	private Administrateur admin;
 	
+	
 	public Article() {
 		
 	}

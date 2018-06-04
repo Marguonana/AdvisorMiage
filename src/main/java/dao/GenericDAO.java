@@ -11,6 +11,7 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+
 public class GenericDAO<T> {
 
 	protected Class<T> entityClass;

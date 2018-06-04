@@ -14,7 +14,7 @@ import service.IndividuService;
 
 @ManagedBean
 @SessionScoped
-public class GestionDeCommandeBean implements Serializable { //backing-bean
+public class GestionDeCommandeBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //@Autowired

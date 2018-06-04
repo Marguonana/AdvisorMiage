@@ -22,6 +22,7 @@ public class Critere {
 	@ManyToMany(fetch = FetchType.LAZY)
 	private ArrayList<Publicite> publicites;
 
+	
 	public Critere() {
 		
 	}

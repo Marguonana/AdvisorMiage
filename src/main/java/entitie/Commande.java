@@ -48,6 +48,7 @@ public class Commande {
 	@ManyToMany(fetch = FetchType.LAZY)
 	private ArrayList<Anomalie> anomalies;
 
+	
 	Commande() {
 
 	}

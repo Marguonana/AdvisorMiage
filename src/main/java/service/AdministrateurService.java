@@ -5,6 +5,7 @@ import java.util.List;
 import dao.AdministrateurDAO;
 import entitie.Administrateur;
 
+
 public class AdministrateurService {
 	
 	AdministrateurDAO administrateurDAO = new AdministrateurDAO();

@@ -7,7 +7,6 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "anomalie")
 public class Anomalie {
@@ -17,6 +16,7 @@ public class Anomalie {
 	
 	@ManyToMany(fetch = FetchType.LAZY)
 	private ArrayList<Commande> commandes;
+	
 	
 	public Anomalie() {
 		

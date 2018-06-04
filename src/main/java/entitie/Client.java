@@ -12,6 +12,7 @@ public class Client extends Individu {
 	@Column(name = "etat")
 	private String etat;
 
+	
 	public Client() {
 
 	}

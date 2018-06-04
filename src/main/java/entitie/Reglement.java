@@ -24,6 +24,7 @@ public class Reglement {
 	@OneToMany(mappedBy="reglement", fetch = FetchType.LAZY)
 	private ArrayList<Commande> commandes;
 	
+	
 	public Reglement() {
 		
 	}

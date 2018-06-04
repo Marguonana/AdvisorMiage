@@ -5,6 +5,7 @@ import java.util.List;
 import dao.ClientDAO;
 import entitie.Client;
 
+
 public class ClientService {
 	
 	ClientDAO clientDAO = new ClientDAO();

@@ -24,6 +24,7 @@ public class Utilisateur {
 	@Column(name = "email")
 	private String email;
 
+	
 	Utilisateur() {
 
 	}

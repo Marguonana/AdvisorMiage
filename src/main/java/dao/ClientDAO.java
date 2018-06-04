@@ -6,6 +6,7 @@ import java.util.Map;
 
 import entitie.Client;
 
+
 public class ClientDAO extends GenericDAO<Client> {
 	
 	public Client create(Client client) {

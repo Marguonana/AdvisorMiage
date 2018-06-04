@@ -5,6 +5,7 @@ import java.util.Map;
 
 import entitie.Article;
 
+
 public class ArticleDAO extends GenericDAO<Article> {
 	
 	public Article create(Article article) {
