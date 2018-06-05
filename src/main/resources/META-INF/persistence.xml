@@ -5,9 +5,14 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="AdvisorMiage">
 		<class>entitie.Administrateur</class>
+		<class>entitie.Anomalie</class>
+		<class>entitie.Article</class>
 		<class>entitie.Client</class>
 		<class>entitie.Commande</class>
+		<class>entitie.Critere</class>
 		<class>entitie.Individu</class>
+		<class>entitie.Publicite</class>
+		<class>entitie.Reglement</class>
 		<class>entitie.Utilisateur</class>
 	</persistence-unit>
 </persistence>
