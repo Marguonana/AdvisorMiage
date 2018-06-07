@@ -1,20 +1,33 @@
 package entitie;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "article")
+@Table
 @NamedQueries({
 	@NamedQuery(name = "Article.All", query = "SELECT a FROM Article a"),
 	@NamedQuery(name = "Article.ById", query = "SELECT a FROM Article a WHERE a.id =:article")
 })
-public class Article {
+public class Article implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )
+	@GeneratedValue/*( strategy = GenerationType.AUTO )*/
 	private Long id;
 	
 	@Column( name="designation")
@@ -23,13 +36,13 @@ public class Article {
 	@Column( name="prix_de_vente")
 	private String prixDeVente;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "articles")
 	private ArrayList<Publicite> publicites;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "articles")
 	private ArrayList<Commande> commandes;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "admin_id")
 	private Administrateur admin;
 	

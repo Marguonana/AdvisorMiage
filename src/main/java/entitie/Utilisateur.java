@@ -1,18 +1,30 @@
 package entitie;
 
-import javax.persistence.*;
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "utilisateur")
+@Table
 @NamedQueries({
 		@NamedQuery(name = "Utilisateur.All", query = "SELECT u FROM Utilisateur u"),
 		@NamedQuery(name = "Utilisateur.ById", query = "SELECT u FROM Utilisateur u WHERE u.id =:utilisateur")
 })
-public class Utilisateur {
-	
+public class Utilisateur implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue/*(strategy = GenerationType.AUTO)*/
 	private Long id;
 
 	@Column(name = "nom")

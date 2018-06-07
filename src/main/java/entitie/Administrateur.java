@@ -6,19 +6,21 @@ import javax.persistence.*;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
-@Table(name = "administrateur")
+@Table
 @NamedQueries({
 	@NamedQuery(name = "Administrateur.ForConnection", query = "SELECT a FROM Administrateur a WHERE a.email =:email AND a.mdp =:mdp")
 })
 public class Administrateur extends Utilisateur {
 
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "mot_de_passe")
 	private String mdp;
 	
-	@OneToMany(mappedBy="admin", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="admin")
 	private ArrayList<Individu> individus;
 
-	@OneToMany(mappedBy="admin", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="admin")
 	private ArrayList<Article> articles;
 
 	

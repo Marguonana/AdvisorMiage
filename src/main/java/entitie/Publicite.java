@@ -1,16 +1,30 @@
 package entitie;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "publicite")
-public class Publicite {
+@Table
+public class Publicite implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue/*(strategy = GenerationType.AUTO)*/
+	private Long id;
 
 	@Column(name = "type" )
-	private Enum type;
+	private String type;
 	
 	@Column(name = "type" )
 	private String titre;
@@ -18,10 +32,10 @@ public class Publicite {
 	@Column(name = "description")
 	private String description;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	private ArrayList<Critere> criteres;
+	@OneToOne(fetch = FetchType.LAZY)
+	private Critere critere;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "publicites")
 	private ArrayList<Article> articles;
 	
 	
@@ -29,45 +43,62 @@ public class Publicite {
 		
 	}
 
-	public Enum getType() {
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Enum type) {
+
+	public void setType(String type) {
 		this.type = type;
 	}
+
 
 	public String getTitre() {
 		return titre;
 	}
 
+
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
+
 
 	public String getDescription() {
 		return description;
 	}
 
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public ArrayList<Critere> getCriteres() {
-		return criteres;
+
+	public Critere getCritere() {
+		return critere;
 	}
 
-	public void setCriteres(ArrayList<Critere> criteres) {
-		this.criteres = criteres;
+
+	public void setCritere(Critere critere) {
+		this.critere = critere;
 	}
+
 
 	public ArrayList<Article> getArticles() {
 		return articles;
 	}
 
+
 	public void setArticles(ArrayList<Article> articles) {
 		this.articles = articles;
 	}
-	
-	
 }

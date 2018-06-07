@@ -1,14 +1,21 @@
 package entitie;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
-@Table(name = "client")
+@Table
 @NamedQueries({
 		@NamedQuery(name = "Client.CheckExist", query = "SELECT c FROM Client c WHERE c.nom =:nom AND c.prenom =:prenom") })
 public class Client extends Individu {
 
+	private static final long serialVersionUID = 1L;
+	
 	@Column(name = "etat")
 	private String etat;
 

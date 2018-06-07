@@ -7,12 +7,14 @@ import javax.persistence.*;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
-@Table(name = "individu")
+@Table
 @NamedQueries({
 	@NamedQuery(name = "Individu.CheckExist", query = "SELECT i FROM Individu i WHERE i.nom =:nom AND i.prenom =:prenom")
 })
 public class Individu extends Utilisateur {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "date_naissance")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateNaissance;
@@ -24,7 +26,7 @@ public class Individu extends Utilisateur {
 	private String telephone;
 
 	@Column(name = "caracteristique_commerciale")
-	private Enum caracteristiqueCommerciale;
+	private String caracteristiqueCommerciale;
 
 	@Column(name = "adresse")
 	private String adresse;
@@ -35,14 +37,14 @@ public class Individu extends Utilisateur {
 	@Column(name = "ville")
 	private String ville;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "admin_id")
 	private Administrateur admin;
 
-	@OneToMany(mappedBy="individu", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "individu")
 	private ArrayList<Commande> commandes;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "individus")
 	private ArrayList<Critere> criteres;
 
 	
@@ -74,11 +76,11 @@ public class Individu extends Utilisateur {
 		this.telephone = telephone;
 	}
 
-	public Enum getCaracteristiqueCommerciale() {
+	public String getCaracteristiqueCommerciale() {
 		return caracteristiqueCommerciale;
 	}
 
-	public void setCaracteristiqueCommerciale(Enum caracteristiqueCommerciale) {
+	public void setCaracteristiqueCommerciale(String caracteristiqueCommerciale) {
 		this.caracteristiqueCommerciale = caracteristiqueCommerciale;
 	}
 

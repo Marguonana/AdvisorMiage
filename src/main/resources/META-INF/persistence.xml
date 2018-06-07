@@ -3,7 +3,11 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="AdvisorMiage">
+
+	<!-- Unite de persistence [1] -->
+	<persistence-unit name="bdd_advisor" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
 		<class>entitie.Administrateur</class>
 		<class>entitie.Anomalie</class>
 		<class>entitie.Article</class>
@@ -14,5 +18,28 @@
 		<class>entitie.Publicite</class>
 		<class>entitie.Reglement</class>
 		<class>entitie.Utilisateur</class>
+
+		<properties>
+			<!-- Login et password [4] -->
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+
+			<!-- MySQL [2] -->
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+
+			<!-- Adresse [3] -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/bdd_advisor" />
+
+			<property name="eclipselink.logging.level" value="INFO" />
+
+
+			<!-- EclipseLink should create the database schema automatically -->
+			<property name="eclipselink.ddl-generation"
+				value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode"
+				value="database" />
+		</properties>
 	</persistence-unit>
 </persistence>

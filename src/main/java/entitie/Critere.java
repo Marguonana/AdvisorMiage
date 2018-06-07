@@ -1,63 +1,91 @@
 package entitie;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "critere")
-public class Critere {
+@Table
+public class Critere implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue/*(strategy = GenerationType.AUTO)*/
+	private Long id;
+	
 	@Column(name = "valide")
 	private Boolean valide;
 	
 	@Column(name = "type")
-	private Enum type;
+	private String type;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "criteres")
 	private ArrayList<Individu> individus;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	private ArrayList<Publicite> publicites;
+	@OneToOne(fetch = FetchType.LAZY)
+	private Publicite publicite;
 
 	
 	public Critere() {
 		
 	}
-	
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
 	public Boolean getValide() {
 		return valide;
 	}
+
 
 	public void setValide(Boolean valide) {
 		this.valide = valide;
 	}
 
-	public Enum getType() {
+
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Enum type) {
+
+	public void setType(String type) {
 		this.type = type;
 	}
+
 
 	public ArrayList<Individu> getIndividus() {
 		return individus;
 	}
 
+
 	public void setIndividus(ArrayList<Individu> individus) {
 		this.individus = individus;
 	}
 
-	public ArrayList<Publicite> getPublicites() {
-		return publicites;
+
+	public Publicite getPublicite() {
+		return publicite;
 	}
 
-	public void setPublicites(ArrayList<Publicite> publicites) {
-		this.publicites = publicites;
+
+	public void setPublicite(Publicite publicite) {
+		this.publicite = publicite;
 	}
-	
-	
 }
