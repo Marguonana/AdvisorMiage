@@ -11,4 +11,6 @@ public class CritereDAO extends GenericDAO<Critere> {
 	public void delete(Critere critere) {
 		super.delete(critere);
 	}
+	
+	
 }

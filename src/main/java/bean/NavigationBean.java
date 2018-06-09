@@ -25,4 +25,8 @@ public class NavigationBean implements Serializable {
 	public String goCommandes() {
 		return "Commandes";
 	}
+	
+	public String goCritere() {
+		return "Critere";
+	}
 }
