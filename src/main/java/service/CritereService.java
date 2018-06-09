@@ -1,7 +1,6 @@
 package service;
 
 import dao.CritereDAO;
-import entitie.Article;
 import entitie.Critere;
 
 public class CritereService {

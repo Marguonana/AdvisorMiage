@@ -2,9 +2,11 @@ package bean;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
 import entitie.Administrateur;
 import service.AdministrateurService;
 
@@ -24,17 +26,30 @@ public class ConnexionBean implements Serializable { //backing-bean
 
 	private String motDePasse;
 	
+	private String message;
+	
+	@PostConstruct
+	public void init() {
+        System.out.println("init");
+		administrateur = new Administrateur("Darkaoui", "Fakih", "admin@fenouil.fr", "admin");
+		administrateurService.create(administrateur);
+		email = "admin@fenouil.fr";
+		motDePasse = "admin";
+		connexion();
+	}
+	
 	public String connexion() {
+        System.out.println("connexion");
 		this.administrateur = administrateurService.seConnecter(email, motDePasse);
-		FacesMessage message;
 		if(this.administrateur != null) {
-	        message = new FacesMessage( "Succès de la connexion !" );
+	        message = "Succès de la connexion !";
+	        System.out.println(message);
 	        return navigationBean.goAccueil();
 		} else {
-	        message = new FacesMessage( "Erreur de connexion !" );
+	        message = "Erreur de connexion !";
+	        System.out.println(message);
 	        return navigationBean.goConnexion();
 		}
-        //FacesContext.getCurrentInstance().addMessage( null, message );
 	}
 
 	public NavigationBean getNavigationBean() {

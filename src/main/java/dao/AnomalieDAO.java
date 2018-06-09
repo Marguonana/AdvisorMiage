@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import entitie.Anomalie;
-import entitie.Individu;
 
 
 public class AnomalieDAO extends GenericDAO<Anomalie>{

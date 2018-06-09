@@ -1,7 +1,6 @@
 package entitie;
 
 import java.util.List;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,6 +37,21 @@ public class Administrateur extends Utilisateur {
 	public Administrateur() {
 
 	}
+	
+	public Administrateur(String nom, String prenom, String email, String mdp) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.mdp = mdp;
+	}
+
+	public Administrateur(String mdp) {
+		super();
+		this.mdp = mdp;
+	}
+
+
 
 	public String getMdp() {
 		return mdp;

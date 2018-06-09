@@ -26,16 +26,16 @@ public class Utilisateur implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	protected Long id;
 
 	@Column(name = "nom")
-	private String nom;
+	protected String nom;
 
 	@Column(name = "prenom")
-	private String prenom;
+	protected String prenom;
 
 	@Column(name = "email")
-	private String email;
+	protected String email;
 
 	
 	public Utilisateur() {
