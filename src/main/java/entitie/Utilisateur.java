@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table
+@Table(name="utilisateur")
 @NamedQueries({
 		@NamedQuery(name = "Utilisateur.All", query = "SELECT u FROM Utilisateur u"),
 		@NamedQuery(name = "Utilisateur.ById", query = "SELECT u FROM Utilisateur u WHERE u.id =:utilisateur")
@@ -24,7 +25,7 @@ public class Utilisateur implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue/*(strategy = GenerationType.AUTO)*/
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@Column(name = "nom")
@@ -37,7 +38,7 @@ public class Utilisateur implements Serializable {
 	private String email;
 
 	
-	Utilisateur() {
+	public Utilisateur() {
 
 	}
 

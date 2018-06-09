@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
-@Table
+@Table(name="client")
 @NamedQueries({
 		@NamedQuery(name = "Client.CheckExist", query = "SELECT c FROM Client c WHERE c.nom =:nom AND c.prenom =:prenom") })
 public class Client extends Individu {

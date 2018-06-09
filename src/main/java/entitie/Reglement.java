@@ -1,24 +1,25 @@
 package entitie;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="reglement")
 public class Reglement implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue/*(strategy = GenerationType.AUTO)*/
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name ="numero")
@@ -30,8 +31,8 @@ public class Reglement implements Serializable {
 	@Column(name ="type")
 	private String type;
 	
-	@OneToMany(mappedBy="reglement")
-	private ArrayList<Commande> commandes;
+//	@OneToMany(mappedBy="reglement", fetch = FetchType.LAZY)
+//	private List<Commande> commandes;
 	
 	
 	public Reglement() {
@@ -76,15 +77,5 @@ public class Reglement implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
-	}
-
-
-	public ArrayList<Commande> getCommandes() {
-		return commandes;
-	}
-
-
-	public void setCommandes(ArrayList<Commande> commandes) {
-		this.commandes = commandes;
 	}
 }
