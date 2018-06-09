@@ -42,6 +42,54 @@ public class CibleDeRoutageBean {
 		}
 	}
 	
+	public IndividuService getIndividuService() {
+		return individuService;
+	}
+
+	public void setIndividuService(IndividuService individuService) {
+		this.individuService = individuService;
+	}
+
+	public ArticleService getArticleService() {
+		return articleService;
+	}
+
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+
+	public CritereService getCritereService() {
+		return critereService;
+	}
+
+	public void setCritereService(CritereService critereService) {
+		this.critereService = critereService;
+	}
+
+	public Individu getIndividu() {
+		return individu;
+	}
+
+	public void setIndividu(Individu individu) {
+		this.individu = individu;
+	}
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+
+	public Critere getCritere() {
+		return critere;
+	}
+
+	public void setCritere(Critere critere) {
+		this.critere = critere;
+	}
+
 	private boolean verifierIndividu() {
 		if(individuService.individuExiste(individu.getNom(),individu.getPrenom()) == null) {
 			return false;
@@ -65,4 +113,6 @@ public class CibleDeRoutageBean {
 			return true;
 		}
 	}
+	
+	
 }
