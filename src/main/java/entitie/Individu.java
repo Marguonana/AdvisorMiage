@@ -1,13 +1,13 @@
 package entitie;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 import javax.persistence.*;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
-@Table
+@Table(name="individu")
 @NamedQueries({
 	@NamedQuery(name = "Individu.CheckExist", query = "SELECT i FROM Individu i WHERE i.nom =:nom AND i.prenom =:prenom")
 })
@@ -37,15 +37,18 @@ public class Individu extends Utilisateur {
 	@Column(name = "ville")
 	private String ville;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "admin_id")
 	private Administrateur admin;
 
-	@OneToMany(mappedBy = "individu")
-	private ArrayList<Commande> commandes;
+	@OneToMany(mappedBy = "individu", fetch = FetchType.LAZY)
+	@OrderBy("date")
+	private List<Commande> commandes;
 	
-	@ManyToMany(mappedBy = "individus")
-	private ArrayList<Critere> criteres;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
+	@OrderBy("type")
+	private List<Critere> criteres;
 
 	
 	public Individu() {
@@ -116,19 +119,19 @@ public class Individu extends Utilisateur {
 		this.admin = admin;
 	}
 
-	public ArrayList<Commande> getCommandes() {
+	public List<Commande> getCommandes() {
 		return commandes;
 	}
 
-	public void setCommandes(ArrayList<Commande> commandes) {
+	public void setCommandes(List<Commande> commandes) {
 		this.commandes = commandes;
 	}
 
-	public ArrayList<Critere> getCriteres() {
+	public List<Critere> getCriteres() {
 		return criteres;
 	}
 
-	public void setCriteres(ArrayList<Critere> criteres) {
+	public void setCriteres(List<Critere> criteres) {
 		this.criteres = criteres;
 	}
 }

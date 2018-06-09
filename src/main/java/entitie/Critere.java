@@ -2,25 +2,28 @@ package entitie;
 
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="critere")
 public class Critere implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue/*(strategy = GenerationType.AUTO)*/
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name = "valide")
@@ -29,11 +32,13 @@ public class Critere implements Serializable {
 	@Column(name = "type")
 	private String type;
 	
-	@ManyToMany(mappedBy = "criteres")
-	private ArrayList<Individu> individus;
-	
 	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "publicite_id")
 	private Publicite publicite;
+	
+	@ManyToMany(mappedBy = "criteres", fetch = FetchType.LAZY)
+	@OrderBy("nom")
+	private List<Individu> individus;
 
 	
 	public Critere() {
@@ -70,12 +75,12 @@ public class Critere implements Serializable {
 	}
 
 
-	public ArrayList<Individu> getIndividus() {
+	public List<Individu> getIndividus() {
 		return individus;
 	}
 
 
-	public void setIndividus(ArrayList<Individu> individus) {
+	public void setIndividus(List<Individu> individus) {
 		this.individus = individus;
 	}
 

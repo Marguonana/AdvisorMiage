@@ -1,12 +1,21 @@
 package entitie;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
-@Table
+@Table(name="administrateur")
 @NamedQueries({
 	@NamedQuery(name = "Administrateur.ForConnection", query = "SELECT a FROM Administrateur a WHERE a.email =:email AND a.mdp =:mdp")
 })
@@ -17,11 +26,13 @@ public class Administrateur extends Utilisateur {
 	@Column(name = "mot_de_passe")
 	private String mdp;
 	
-	@OneToMany(mappedBy="admin")
-	private ArrayList<Individu> individus;
+	@OneToMany(mappedBy="admin", fetch = FetchType.LAZY)
+	@OrderBy("nom")
+	private List<Individu> individus;
 
-	@OneToMany(mappedBy="admin")
-	private ArrayList<Article> articles;
+	@OneToMany(fetch = FetchType.LAZY)
+	@OrderBy("designation")
+	private List<Article> articles;
 
 	
 	public Administrateur() {
@@ -36,19 +47,19 @@ public class Administrateur extends Utilisateur {
 		this.mdp = mdp;
 	}
 
-	public ArrayList<Individu> getIndividus() {
+	public List<Individu> getIndividus() {
 		return individus;
 	}
 
-	public void setIndividus(ArrayList<Individu> individus) {
+	public void setIndividus(List<Individu> individus) {
 		this.individus = individus;
 	}
 
-	public ArrayList<Article> getArticles() {
+	public List<Article> getArticles() {
 		return articles;
 	}
 
-	public void setArticles(ArrayList<Article> articles) {
+	public void setArticles(List<Article> articles) {
 		this.articles = articles;
 	}
 }
