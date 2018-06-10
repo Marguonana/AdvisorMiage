@@ -15,7 +15,7 @@ public class NavigationBean implements Serializable {
 	}
 
 	public String goAccueil() {
-		return "Accueil";
+		return "/WEB-INF/pages/suiviCommande.xhtml";
 	}
 	
 	public String goCommande() {
