@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: fakih
 Build-Jdk: 1.8.0_171
-=======
-Built-By: nmarg
-Build-Jdk: 1.8.0_161
->>>>>>> 729eb72ea6f420838bfffb8620348894163ce048
 Created-By: Maven Integration for Eclipse
 
