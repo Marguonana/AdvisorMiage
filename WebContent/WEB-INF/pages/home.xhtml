@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
+<h:head>
+<h:outputLink>Homep</h:outputLink>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-<link rel="stylesheet" href="../style/home.scss" type="text/css" />
+<link rel="stylesheet" type="text/css" href="resources/style/home.scss" media="screen" />
+<h:outputStylesheet library="style" name="home.scss"  />
 <title>Home</title>
 <meta name="description" content="Page d'accueil" />
-</head>
-<h:body>
+</h:head>
+<h:body class="bodyOfHome">
 <div class="py-5">
 <div class="container">
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6">
-<div class="card text-white p-5 bg-gradient" style="background-image: url("#{resource['images/brico.jpg']}");">
+<div class="card text-white p-5 bg-gradient" >
 <div class="card-body border border-primary">
 <h1 class="mb-4 text-white">Connexion</h1>
 <form action="https://formspree.io/YOUREMAILHERE">
