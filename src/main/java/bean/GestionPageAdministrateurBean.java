@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 import entitie.Article;
 import entitie.Individu;
 import service.ArticleService;
-import service.IndividuService;
+import service.*;
 
 @ManagedBean
 @SessionScoped

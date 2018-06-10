@@ -5,7 +5,7 @@ package bean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import entitie.Article;
+import entitie.*;
 import entitie.Critere;
 import entitie.Individu;
 import service.ArticleService;
