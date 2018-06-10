@@ -1,6 +1,8 @@
 package bean;
 
 
+import java.io.Serializable;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -8,9 +10,11 @@ import javax.faces.bean.SessionScoped;
 import entitie.*;
 import entitie.Critere;
 import entitie.Individu;
+import entitie.Publicite;
 import service.ArticleService;
 import service.CritereService;
 import service.IndividuService;
+import service.PubliciteService;
 
 @ManagedBean
 @SessionScoped
@@ -26,14 +30,22 @@ public class CibleDeRoutageBean {
 	
 	private CritereService critereService;
 
+	private PubliciteService publiciteService;
+	
 	private Individu individu;
 
-	private Article article;
+	private List<Article> article;
 	
 	private Critere critere;
 	
+	private Publicite publicite;
+	
 	public String ajouterPublicite() {
 		if(verifierIndividu() && verifierCritere() && verifierArticle()) {
+			publicite.setCritere(critere);
+			publicite.setArticles(article);
+			
+			publiciteService.create(publicite);
 			return navigationBean.goAccueil();
 		}else {
 			return navigationBean.goCritere();
@@ -72,11 +84,11 @@ public class CibleDeRoutageBean {
 		this.individu = individu;
 	}
 
-	public Article getArticle() {
+	public List<Article> getArticle() {
 		return article;
 	}
 
-	public void setArticle(Article article) {
+	public void setArticle(List<Article> article) {
 		this.article = article;
 	}
 
