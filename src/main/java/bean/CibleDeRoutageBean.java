@@ -1,13 +1,9 @@
 package bean;
 
 
-
-<<<<<<< HEAD
 import java.io.Serializable;
 import java.util.List;
 
-=======
->>>>>>> f3159f8cbdfb75b2ba274179612298c0733109ec
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
