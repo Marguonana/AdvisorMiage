@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script type="text/javascript" src="../resources/js/creation.js" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css" />
 <title></title>
@@ -18,13 +21,13 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav" id="nav">
           <li class="nav-item">
-            <a class="nav-link" href="#" data-target="commande.">Commande</a>
+            <a class="nav-link" href="suiviCommande.xhtml" data-target="commande.">Commande</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-target="commande.html">Article</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="suiviCommande.xhtml">Client
+            <a class="nav-link" href="creation.xhtml">Nouveau Client
               <br /> </a>
           </li>
         </ul>
@@ -40,7 +43,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent"> </div>
     </div>
   </nav>
-<div class="py-5" style="background-image: url('../resourcs/images/fondbleu_.png');">
+<div class="py-5" style="background-image: url('../resources/images/fondbleu_.png');">
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -51,18 +54,20 @@
 </div>
 <div class="container">
 <div class="row">
-<div class="col-md-4 offset-md-7">
-<form class="">
-<div class="form-group"><label>Nom</label> <input type="text" class="form-control" placeholder="Darkaoui" /></div>
-<div class="form-group"><label>Prenom</label> <input type="text" class="form-control" placeholder="Fakih" /> </div>
-<div class="form-group"><label>Année de naissance</label> <input type="number" class="form-control" placeholder="1981" /></div>
-<div class="form-group"><label>Adresse mail</label> <input type="email" class="form-control" placeholder="Fakih.D81@gmail.com" /> <small class="form-text text-muted">We'll never share your email
+<div class="col-md-6 " ><img src="../resources/images/createUser.png" alt="icon create user" /></div>
+<div class="col-md-6 ">
+<form class="formToSave">
+<div class="form-group"><label>Nom</label> <input name="nom" type="text" class="form-control" placeholder="Darkaoui" /></div>
+<div class="form-group"><label>Prenom</label> <input name="prenom" type="text" class="form-control" placeholder="Fakih" /> </div>
+<div class="form-group"><label>Année de naissance</label> <input name="anneeNaiss" type="number" class="form-control" placeholder="1981" /></div>
+<div class="form-group"><label>Adresse mail</label> <input name="mail" type="email" class="form-control" placeholder="Fakih.D81@gmail.com" /> <small class="form-text text-muted">We'll never share your email
 with anyone else.</small></div>
-<div class="form-group"><label>Numéro de rue</label> <input type="number" class="form-control" placeholder="3" /></div>
-<div class="form-group"><label>Libellé</label> <input type="text" class="form-control" placeholder="rue des prés" /></div>
-<div class="form-group"><label>Ville</label> <input type="text" class="form-control" placeholder="Créteil" /> </div>
-<div class="form-group"><label>Code postal</label> <input type="number" class="form-control" placeholder="94100" /> </div>
-<button type="submit" class="btn btn-primary">Valider</button></form>
+<div class="form-group"><label>Numéro de rue</label> <input name="numAdresse" type="number" class="form-control" placeholder="3" /></div>
+<div class="form-group"><label>Libellé</label> <input name="nomRue" type="text" class="form-control" placeholder="rue des prés" /></div>
+<div class="form-group"><label>Ville</label> <input name="ville" type="text" class="form-control" placeholder="Créteil" /> </div>
+<div class="form-group"><label>Code postal</label> <input name="cp" type="number" class="form-control" placeholder="94100" /> </div>
+<div class="form-group"><label>csp</label> <input name="csp" type="text" class="form-control" placeholder="100 - Agriculteur" /> </div>
+<button type="submit" class="btn btn-primary" onclick="saveIndividu()">Valider</button></form>
 </div>
 </div>
 </div>
