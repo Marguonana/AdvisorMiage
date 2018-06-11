@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html">
-
-<h:head>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-	  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css"> 
-</h:head>
-
-<h:body style="background-image: url('../images/fondbleu_.png');">
-  <nav class="navbar navbar-expand-md navbar-dark m-1 bg-secondary" id="headerMenu">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css" />
+<title></title>
+</head>
+<body style="background-image: url('../images/fondbleu_.png');">
+<nav class="navbar navbar-expand-md navbar-dark m-1 bg-secondary" id="headerMenu">
     <a class="ml-3 btn navbar-btn btn-primary" href="#" id="monCompte">
       <i class="fa fa-user fa-fw"></i>Mon compte</a>
     <div class="container">
@@ -27,102 +24,85 @@ xmlns:h="http://java.sun.com/jsf/html">
             <a class="nav-link" href="#" data-target="commande.html">Article</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Client
-              <br> </a>
+            <a class="nav-link" href="suiviCommande.xhtml">Client
+              <br /> </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="py-5 w-100 h-50" style="background-image: url('../images/stairs2.jpg');" id="imgFond">
-    <div class="container" style="background-image: url('../images/fondbleu_.png');">
-      <div class="row"></div>
-    </div>
-  </div>
+  <div class="py-5 w-100 h-50" style="background-image: url('../resources/images/stairs2.jpg');" id="imgFond"></div>
   <nav class="navbar navbar-expand-md bg-secondary navbar-dark" id="searchBar">
     <div class="container">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline m-0">
-          <input class="form-control mr-2" type="text" placeholder="Search" id="searchInput">
-          <button class="btn btn-primary" type="submit" id="searchButton">Search</button>
-        </form>
-      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> </div>
     </div>
   </nav>
-  <div class="py-5" style="background-image: url('../images/fondbleu_.png');">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th id="idColumn">#</th>
-                <th id="nomColumn">Nom</th>
-                <th id="prenomColumn">PrÃ©nom</th>
-                <th id="commandeColumn">Numero de commande</th>
-                <th id="dateColumn">Date de commande</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td> 
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>CN245861552FR</td>
-                <td id="dateCommande">02.10.2018</td>
-                <td>
-                  <a href="#" class="btn btn-outline-secondary">Modifier</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>FL1485163156FR</td>
-                <td>02.05.2018</td>
-                <td>
-                  <a href="#" class="btn btn-outline-secondary">Modifier</a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>CM452485631FR</td>
-                <td>17.01.2018</td>
-                <td>
-                  <a href="#" class="btn btn-outline-secondary">Modifier</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>IT2542684131FR</td>
-                <td>20.02.2018</td>
-                <td>
-                  <a href="#" class="btn btn-outline-secondary">Modifier</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2 offset-md-10">
-          <button class="btn m-4 btn-secondary" type="submit">Ajouter</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</h:body>
-
+<div class="py-5" style="background-image: url('../resources/images/fondbleu_.png');">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<table class="table">
+<thead>
+<tr>
+<th id="idColumn">#</th>
+<th id="nomColumn">Prénom</th>
+<th id="prenomColumn">Nom</th>
+<th id="commandeColumn">Numero de commande</th>
+<th id="dateColumn">Date de commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>CN245861552FR</td>
+<td id="dateCommande">02.10.2018</td>
+<td><a href="#" class="btn btn-outline-secondary">Modifier</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jacob</td>
+<td>Thornton</td>
+<td>FL1485163156FR</td>
+<td>02.05.2018</td>
+<td><a href="#" class="btn btn-outline-secondary">Modifier</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Lahlou</td>
+<td>Benarab</td>
+<td>CM452485631FR</td>
+<td>17.01.2018</td>
+<td><a href="#" class="btn btn-outline-secondary">Modifier</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>IT2542684131FR</td>
+<td>20.02.2018</td>
+<td><a href="#" class="btn btn-outline-secondary">Modifier</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-2 offset-md-10"><button class="btn m-4 btn-secondary" type="submit">Ajouter</button></div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" type="text/javascript">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin=
+"anonymous" type="text/javascript">
+</script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
+type="text/javascript">
+</script>
+</body>
 </html>

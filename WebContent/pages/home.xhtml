@@ -3,7 +3,6 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-	<h:outputLink>Homep</h:outputLink>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet"
@@ -11,7 +10,10 @@
 		type="text/css" />
 	<link rel="stylesheet" type="text/css" href="resources/style/home.scss"
 		media="screen" />
-	<h:outputStylesheet library="style" name="home.scss" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+		<script type="text/javascript" src="resources/js/home.js" />
+<h:outputStylesheet library="style" name="home.scss" />
 	<title>Home</title>
 	<meta name="description" content="Page d'accueil" />
 </h:head>
@@ -35,8 +37,9 @@
 										class="form-control" placeholder="Password" id="inputPassword"
 										name="passwordConnection" required="required" />
 								</div>
-								<a href="pages/critere.xhtml" class="btn btn-secondary">Login</a>
+								<a class="btn btn-secondary" onclick="validConnexion()">Login</a>
 							</form>
+							<span id="errorConnexion" style="color: red; display:none" >Administrateur non reconnu</span>
 						</div>
 					</div>
 				</div>
